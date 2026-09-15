@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEOX Detailing Lab — Hi-End детейлінг у Києві</title>
+    <script>
+      // Single Page Application redirect for GitHub Pages
+      // Redirects any 404 back to the main index.html
+      var pathSegmentsToKeep = 0;
+      var l = window.location;
+      var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash;
+      window.location.replace(redirectUrl);
+    </script>
+  </head>
+  <body style="background: #090A0C; color: #fff; display: flex; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif; margin: 0;">
+    <div style="text-align: center;">
+      <h2>Завантаження сайту...</h2>
+      <p style="color: #94a3b8;">Якщо перенаправлення не відбулося, <a href="./" style="color: #3b82f6;">натисніть тут</a>.</p>
+    </div>
+  </body>
+</html>
