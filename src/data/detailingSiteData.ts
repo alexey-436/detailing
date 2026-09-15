@@ -1,17 +1,5 @@
 import { ServiceItem, BeforeAfterItem, ReelVideo, ReviewItem } from '../types';
 
-import hoodSwirlsBefore from '../assets/images/hood_swirls_before_1789465009273.jpg';
-import hoodMirrorAfter from '../assets/images/hood_mirror_after_1789465029492.jpg';
-import hoodSplitTest from '../assets/images/detailing_paint_correction_5050_1789464942618.jpg';
-
-import lightsCloudyBefore from '../assets/images/headlight_cloudy_before_1789465045421.jpg';
-import lightsClearAfter from '../assets/images/headlight_clear_after_1789465066819.jpg';
-import lightsSplitTest from '../assets/images/headlight_restoration_5050_1789464963530.jpg';
-
-import leatherDirtyBefore from '../assets/images/leather_dirty_before_1789465082619.jpg';
-import leatherCleanAfter from '../assets/images/leather_clean_after_1789465097640.jpg';
-import leatherSplitTest from '../assets/images/leather_interior_5050_1789464978748.jpg';
-
 export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'ppf-protection',
@@ -182,9 +170,9 @@ export const BEFORE_AFTER_WORKS: BeforeAfterItem[] = [
     title: 'Porsche 911 (Deep Black Metallic)',
     subtitle: 'Корекція ЛФП під Scangrip ліхтарем + Самовідновлювальна PPF плівка 215 мкм',
     category: 'ЛФП та Бронеплівка',
-    beforeImg: hoodSwirlsBefore,
-    afterImg: hoodMirrorAfter,
-    splitTestImg: hoodSplitTest,
+    beforeImg: 'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1600&q=85',
+    afterImg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=85',
+    splitTestImg: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1600&q=85',
     timeSpent: '32 години',
     coating: 'SunTek Ultra PPF 215 мкм + Gyeon Q² Pure EVO 9H',
     stats: '100% усунення голограм та павутиння • Дзеркало 99.8 GU'
@@ -194,9 +182,9 @@ export const BEFORE_AFTER_WORKS: BeforeAfterItem[] = [
     title: 'BMW M5 F90 (Лазерна Оптика)',
     subtitle: 'Шліфування мікротріщин від піскострую + Оптичний поліуретан Stek Dyno',
     category: 'Відновлення Оптики',
-    beforeImg: lightsCloudyBefore,
-    afterImg: lightsClearAfter,
-    splitTestImg: lightsSplitTest,
+    beforeImg: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1600&q=85',
+    afterImg: 'https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1600&q=85',
+    splitTestImg: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1600&q=85',
     timeSpent: '4 години',
     coating: 'Stek DynoShield Transparent Polyurethane',
     stats: '+38% прозорість та яскравість світлового пучка'
@@ -206,9 +194,9 @@ export const BEFORE_AFTER_WORKS: BeforeAfterItem[] = [
     title: 'Range Rover SV (Nappa White)',
     subtitle: 'Глибока екстракція джинсового барвника + Матова наноконсервація Colourlock',
     category: 'Хімчистка Салону',
-    beforeImg: leatherDirtyBefore,
-    afterImg: leatherCleanAfter,
-    splitTestImg: leatherSplitTest,
+    beforeImg: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1600&q=85',
+    afterImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1600&q=85',
+    splitTestImg: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1600&q=85',
     timeSpent: '12 годин',
     coating: 'Colourlock Leder Shield + Gyeon Q² LeatherCoat',
     stats: '100% матовий заводський шовк без жирного блиску'

@@ -31,25 +31,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         isDark ? 'bg-[#090A0F] border-white/10 text-white' : 'bg-slate-50 border-slate-200 text-slate-900'
       }`}
     >
-      {/* Background Video / 4K Ambient Player (Vivid, clearly visible and seamlessly looped) */}
+      {/* Background High-Definition Visual (Vivid, clearly visible, rock-solid CDN link) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          onEnded={(e) => {
-            const v = e.currentTarget;
-            v.currentTime = 0;
-            v.play();
+        <img
+          src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=85"
+          alt="NEOX Lab Detailing Studio"
+          onError={(e) => {
+            e.currentTarget.src = 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=85';
           }}
-          poster="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=80"
           className={`w-full h-full object-cover scale-105 transition-opacity duration-700 ${
             isDark ? 'opacity-70 contrast-110 brightness-95' : 'opacity-40 contrast-110'
           }`}
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-car-washing-cleaning-spray-41139-large.mp4" type="video/mp4" />
-        </video>
+        />
 
         {/* Ambient Gradients to preserve optimal text readability without darkening out the video */}
         <div

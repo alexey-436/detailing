@@ -16,6 +16,7 @@ export const ShowroomReelsSection: React.FC<ShowroomReelsSectionProps> = ({
   const [activeReel, setActiveReel] = useState<ReelVideo | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const [likesMap, setLikesMap] = useState<{ [id: string]: number }>({});
   const [likedStatus, setLikedStatus] = useState<{ [id: string]: boolean }>({});
   const isDark = theme === 'dark';
@@ -90,6 +91,7 @@ export const ShowroomReelsSection: React.FC<ShowroomReelsSectionProps> = ({
                   setActiveReel(reel);
                   setIsPlaying(true);
                   setIsMuted(false);
+                  setVideoError(false);
                 }}
                 className={`group relative aspect-[9/16] rounded-3xl overflow-hidden border transition-all duration-300 cursor-pointer shadow-lg ${
                   isDark ? 'border-white/10 bg-[#121520] hover:border-blue-500/50' : 'border-slate-200 bg-slate-100 hover:border-blue-400 hover:shadow-xl'
@@ -99,6 +101,9 @@ export const ShowroomReelsSection: React.FC<ShowroomReelsSectionProps> = ({
                 <img
                   src={reel.videoPoster}
                   alt={reel.title}
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=600&q=80';
+                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
                 />
 

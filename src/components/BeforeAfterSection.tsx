@@ -9,6 +9,10 @@ interface BeforeAfterSectionProps {
   onOpenBooking: () => void;
 }
 
+const FALLBACK_AFTER = 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=85';
+const FALLBACK_BEFORE = 'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1600&q=85';
+const FALLBACK_SPLIT = 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1600&q=85';
+
 export const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
   theme,
   onOpenBooking,
@@ -236,11 +240,17 @@ export const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
           >
             {showOriginalSplit && currentWork.splitTestImg ? (
               /* Direct Studio 50/50 Comparison Photo Mode */
-              <div className="relative w-full h-full">
+              <div className="relative w-full h-full bg-neutral-900">
                 <img
                   src={currentWork.splitTestImg}
                   alt="Прямий тест 50 на 50 під інспекційним світлом"
-                  className="w-full h-full object-cover select-none"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== FALLBACK_SPLIT) {
+                      target.src = FALLBACK_SPLIT;
+                    }
+                  }}
+                  className="w-full h-full object-cover select-none transition-opacity duration-300"
                   draggable={false}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
@@ -256,7 +266,13 @@ export const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
                 <img
                   src={currentWork.afterImg}
                   alt="Після нанесення PPF бронеплівки та полірування"
-                  className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== FALLBACK_AFTER) {
+                      target.src = FALLBACK_AFTER;
+                    }
+                  }}
+                  className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none transition-opacity duration-300"
                   draggable={false}
                 />
 
@@ -270,7 +286,13 @@ export const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
                   <img
                     src={currentWork.beforeImg}
                     alt="До дітейлінгу: стан із дефектами"
-                    className="absolute inset-0 w-full h-full object-cover select-none filter contrast-105"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (target.src !== FALLBACK_BEFORE) {
+                        target.src = FALLBACK_BEFORE;
+                      }
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover select-none filter contrast-105 transition-opacity duration-300"
                     draggable={false}
                   />
 
